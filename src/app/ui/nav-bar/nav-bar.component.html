@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/home">FoodEx</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link">Menus </a>
+        <!--          <span class="sr-only">(current)</span>-->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Chefs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Blogs</a>
+      </li>
+
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " >Contact Us</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu service-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/booktable">Book A Table</a>
+          <a class="dropdown-item" href="#">Order Food</a>
+        </div>
+      </li>
+    </ul>
+    <a >
+      <button class="btn btn-outline-success my-2  my-sm-0" routerLink="/login">LogIn</button>
+    </a>
+    <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+
+  </div>
+</nav>
+
