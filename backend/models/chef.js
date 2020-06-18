@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const chefSchema = new Schema({
+const chefSchema = new mongoose.Schema({
   name:{type: String,required: true},
   description: { type:String, required: true },
   imageUrl:{type: String,default: ''}

@@ -1,0 +1,52 @@
+<div class="main">
+  <form #form="ngForm">
+    <div class="form-group">
+      <label for="bookingOnDate">Booking Date</label>
+      <input type="text"
+             id="bookingOnDate"
+             class="form-control"
+             #dp="bsDatepicker"
+             bsDatepicker
+             [bsValue]="bookingDate"
+             name="bookingDate"
+             ngModel
+             [bsConfig]="{ isAnimated : true }">
+    </div>
+
+    <div class="form-group">
+      <label for="availableSlots">Available slots for above date</label>
+      <select class="custom-select" multiple id="availableSlots" name="slots" ngModel>
+        <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+        <option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>
+        <option value="2:00 PM - 3:00 PM" >2:00 AM - 3:00 AM</option>
+
+      </select>
+
+      <small id="slothelp" class="form-text text-muted">Use Ctrl for multiple selects</small>
+    </div>
+    <div class="form-group">
+      <label for="tableNo">Table No</label>
+      <input type="number" class="form-control" id="tableNo" name="tableNo" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="bookingSlot">Booking On Name</label>
+      <input type="text" class="form-control" id="bookingSlot" ngModel name="bookingName">
+    </div>
+
+
+    <div class="form-group">
+      <label for="bookingEmail">Email Address</label>
+      <input type="email" class="form-control" id="bookingEmail" aria-describedby="emailHelp" name="email" ngModel>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="number" class="form-control" id="phone" name="phone" ngModel>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<h3>{{ form.value | json}}</h3>

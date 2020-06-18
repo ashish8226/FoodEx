@@ -1,0 +1,17 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+</ngx-spinner>
+<div class="main" *ngIf="menus.length > 0">
+  <div class="card" style="width:400px" *ngFor="let menu of menus">
+    <img class="card-img-top" [src]="menu.imageUrl" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{menu.name}}</h4>
+      <p class="card-text">{{menu.description}}</p>
+      <p class="card-text">{{menu.price}}</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="menus.length<1">
+  <h2>No menu present</h2>
+</div>

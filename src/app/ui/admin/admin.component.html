@@ -1,0 +1,65 @@
+<div class="main mx-3 mt-2">
+  <div class="row">
+    <div class="col cl1">
+      <h2 class="center">Add a Menu</h2>
+      <form #menu="ngForm" (ngSubmit)="onMenuSubmit(menu)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name"  [(ngModel)]="model_menu.name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" name="description" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Rs</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Rupee amount (with dot and two decimal places)"
+                   id="price"  [(ngModel)]="model_menu.price" name="price">
+          </div>
+        </div>
+        <div class=" input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload Image</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="imageUrl" aria-describedby="inputGroupFileAddon01" [(ngModel)]="model_menu.imageUrl" name="imageUrl">
+              <label class="custom-file-label" for="imageUrl">Choose file</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <h2>{{menu.value | json}}</h2>
+    </div>
+    <div class="col cl2">
+      <h2 class="center">Add a Chef</h2>
+      <form #chef="ngForm" (ngSubmit)="onChefSubmit(chef)">
+        <div class="form-group">
+          <label for="name_chef">Name</label>
+          <input type="text" class="form-control" id="name_chef"  [(ngModel)]="model_chef.name" name="Name">
+        </div>
+        <div class="form-group">
+          <label for="description_chef">Description</label>
+          <input type="text" class="form-control" id="description_chef"  [(ngModel)]="model_chef.description" name="Description">
+        </div>
+        <div class="input-group  form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon02">Upload Image</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="imageUrl_chef" aria-describedby="inputGroupFileAddon01"
+                   [(ngModel)]="model_chef.imageUrl" name="imageUrl">
+            <label class="custom-file-label" for="imageUrl_chef">Choose file</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <h2>{{chef.value | json}}</h2>
+    </div>
+  </div>
+</div>

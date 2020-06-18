@@ -1,7 +1,6 @@
 const express = require('express')
-const Table = require('../models/table');
 const router = express.Router();
-
+const Table = require('../models/table')
 
 router.route('/')
   .get(async (req, res) => {
@@ -14,10 +13,10 @@ router.route('/')
     }
   )
   .post(async (req, res) => {
-    const table  = new Table(req.body);
+    const table = new Table(req.body);
     try {
       await table.save();
-      res.status(201).json(table) ;
+      res.status(201).json(table);
     } catch (err) {
       res.status(401).json(err);
     }
@@ -34,10 +33,10 @@ router.route('/:id')
   })
   .put(async (req, res) => {
     const _id = req.params.id;
-    try{
-      const table =  Table.findOneAndUpdate({_id}, req.body, {new: true});
+    try {
+      const table = Table.findOneAndUpdate({_id}, req.body, {new: true});
       res.status(202).json(table);
-    }catch(err) {
+    } catch (err) {
       res.status(400).json(err);
     }
   })

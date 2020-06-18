@@ -2,11 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const app = express();
-mongoose.connect("mongodb+srv://Ashish042:2JXP7pnXyDkDHWKo@cluster0-6seuh.mongodb.net/RestaurentDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://Ashish042:8711@cluster0-6seuh.mongodb.net/RestaurentDB?retryWrites=true&w=majority")
   .then(() => {
     console.log('Connected to database');
-  }).catch(() => {
-  console.log('connection failed!!');
+  }).catch((err) => {
+  console.log('connection failed!!',err);
 });
 
 const menus = require('./routes/menus');
